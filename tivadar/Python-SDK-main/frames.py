@@ -4,7 +4,7 @@ import cv2
 
 
 class FrameManager:
-    def __init__(self, path = "D:\\SZTE\\2026\\szakdoga\\tivadar\\Python-SDK-main\\frames"):
+    def __init__(self, path = ".\\frames"):
         self.path = path
         self.counter = 0
 

@@ -25,12 +25,12 @@ class HSV:
     def set_V_min(self, v_min): self.v_min = v_min
     def set_V_max(self, v_max): self.v_max = v_max
     def save_settings(self):
-        with open("D:\\SZTE\\2026\\szakdoga\\tivadar\\Python-SDK-main\\frames\\settings.txt", "w") as file:
+        with open(".\\frames\\settings.txt", "w") as file:
             str_=f"{self.base}\n{self.range}\n{self.s_min}\n{self.s_max}\n{self.v_min}\n{self.v_max}"
             file.write(str_)
     def load_settings(self):
         try:
-            with open("D:\\SZTE\\2026\\szakdoga\\tivadar\\Python-SDK-main\\frames\\settings.txt", "r") as file:
+            with open(".\\frames\\settings.txt", "r") as file:
                 lines = file.readlines()
                 self.base = int(lines[0])
                 self.range = int(lines[1])

@@ -547,10 +547,10 @@ class Tivadar:
         while True:
             key = cv2.waitKey(1)
             if key == ord('a'):
-                self.drive(0, 20)
+                self.drive(0, 30)
                 stopped = False
             elif key == ord('d'):
-                self.drive(0, -20)
+                self.drive(0, -30)
                 stopped = False
             elif key == ord('w'):
                 self.drive(20, 0)

@@ -133,7 +133,7 @@ class MistyEnv(gym.Env):
     def step(self, action):
         action = np.clip(action, -1, 1)
         fw = float(action[0] * 16)
-        yaw = float(action[1] * 32)
+        yaw = float(action[1] * 24)
         self.tivadar.drive(fw, yaw)
         frame_str = self.get_frame_string(fw,yaw)
 
@@ -220,21 +220,19 @@ class MistyEnv(gym.Env):
         target_pos = self.tivadar.get_target_position_yolo()
 
         if target_pos is None:
-            yaw_reward = yaw * 0.1
+            yaw_reward = yaw * 0.2
         else:
-            x_diff_reward = (1 - abs(target_pos))
-            fw_reward = max(fw,0) * x_diff_reward
+            x_diff_reward = (1 - abs(target_pos)) + 1
+            fw_reward = fw * 2
 
         if bumps.front_left or bumps.front_right or bumps.back_left or bumps.back_right:
             bump_reward = -4
-        if distances.center < 0.3 and target_pos is not None:
-            distance_reward = x_diff_reward
         reward = x_diff_reward + distance_reward + fw_reward + yaw_reward + bump_reward
         return reward
 
     def is_terminated(self):
         bumps = self.tivadar.state.get_current_bumps()
-        if bumps.front_left or bumps.front_right or bumps.back_left or bumps.back_right:
+        if bumps.front_left or bumps.front_right or bumps.back_left or bumps.back_right or keyboard.is_pressed(' '):
             return True
         return False
 
