@@ -6,7 +6,7 @@ Használd a `requirements.txt`-t  a szükséges Python csomagok telepítéséhez
 
 ## Teljesítmény
 
-A SAC eléggé megfingatja a CPU-t. Egy Ryzen 5 5600 esetén a Feladatkezelő szerint körülbelül 4 szálat 90%-on pörgetett.
+A SAC eléggé megfingatja a CPU-t. Egy Ryzen 5 5600 esetén a Feladatkezelő szerint körülbelül 4 szálat 90%-on pörgetett, a többit meg 70%-on.
 
 A virtuális robotka kirajzolását szintén a CPU számolja. Az én processzoromon ez kb. észrevehetetlen terhelést jelentett, de az FPS viszonylag egyszerűen csökkenthető a kódban egyetlen szám átírásával.
 
