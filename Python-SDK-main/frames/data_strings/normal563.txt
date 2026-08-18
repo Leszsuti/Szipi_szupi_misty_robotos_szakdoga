@@ -1,0 +1,17 @@
+fw: -13.134525299072266
+yaw: 0.8696365356445312
+
+Distances:
+left: 0.529
+right: 0.527
+center: 0.572
+back: 1
+
+Bumps:
+front_left: False
+front_right: False
+back_left: False
+back_right: False
+
+target_pos: None
+reward: 0.003623485565185547
